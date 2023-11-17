@@ -64,7 +64,7 @@ coopdet3d
 |   |   ├── val
 ```
 
-There are two versions of the TraffiX Cooperative Dataset provided: The version with [500 frames (v0.9)](https://syncandshare.lrz.de/getlink/fiXdMni7DP5bqSsYgSpeLc/traffix-0.9) and the version with [800 frames (v1.0)](https://syncandshare.lrz.de/getlink/fi4gZzFh8BUn6Sw4ZC8u49/traffix-1.0. 
+There are two versions of the TraffiX Cooperative Dataset provided: The version with [500 frames (v0.9)](https://syncandshare.lrz.de/getlink/fiXdMni7DP5bqSsYgSpeLc/traffix-0.9) and the version with [800 frames (v1.0)](https://syncandshare.lrz.de/getlink/fi4gZzFh8BUn6Sw4ZC8u49/traffix-1.0). 
 
 The version with 500 frames (v0.9) is provided to reproduce the results listed below and in the paper as they were achieved using this older version of the dataset. The version with 800 frames (v1.0) is the latest one and includes more frames and corrected labels.
 
