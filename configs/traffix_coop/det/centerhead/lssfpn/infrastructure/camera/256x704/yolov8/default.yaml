@@ -19,7 +19,7 @@ model:
             #  inplace: True
             #init_cfg:
             #  type: Pretrained
-            #  checkpoint: /home/bevfusion/pretrained/yolov8_n_syncbn_fast_8xb16-500e_coco_20230114_131804-88c11cdb.pth
+            #  checkpoint: /home/coopdet3d/weights/yolov8_n_syncbn_fast_8xb16-500e_coco_20230114_131804-88c11cdb.pth
             
             # YOLOv8 s
             type: YOLOv8CSPDarknet
@@ -36,7 +36,7 @@ model:
               inplace: True
             init_cfg:
               type: Pretrained
-              checkpoint: /home/bevfusion/pretrained/yolov8_s_syncbn_fast_8xb16-500e_coco_20230117_180101-5aa5f0f1_new.pth
+              checkpoint: /home/coopdet3d/weights/yolov8_s_syncbn_fast_8xb16-500e_coco_20230117_180101-5aa5f0f1_new.pth
           neck:
             type: GeneralizedLSSFPN
             # YOLOv8 n

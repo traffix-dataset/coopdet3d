@@ -152,10 +152,13 @@ def create_groundtruth_database(
         dataset.pre_pipeline(input_dict)
         example = dataset.pipeline(input_dict)
         annos = example["ann_info"]
-        # use this for infrastructure only perception
-        #points = example["points"].tensor.numpy()
-        # use this for cooperative infrastructure+vehicle perception
-        points = example["registered_points"].tensor.numpy()
+        points = None
+        if dataset_class_name == "TraffixNuscDataset":
+            # use this for infrastructure only perception
+            points = example["points"].tensor.numpy()
+        elif dataset_class_name == "TraffixNuscCoopDataset":
+            # use this for cooperative infrastructure+vehicle perception
+            points = example["registered_points"].tensor.numpy()
         gt_boxes_3d = annos["gt_bboxes_3d"].tensor.numpy()
         names = annos["gt_names"]
         group_dict = dict()
@@ -169,11 +172,13 @@ def create_groundtruth_database(
 
         num_obj = gt_boxes_3d.shape[0]
         point_indices = box_np_ops.points_in_rbbox(points, gt_boxes_3d)
-
-        # use this for infrastructure only perception
-        #temp_name = os.path.basename(example["lidar_path"])
-        # use this for cooperative infrastructure+vehicle perception
-        temp_name = os.path.basename(example["registered_lidar_path"])
+        temp_name = ""
+        if dataset_class_name == "TraffixNuscDataset":
+            # use this for infrastructure only perception
+            temp_name = os.path.basename(example["lidar_path"])
+        elif dataset_class_name == "TraffixNuscCoopDataset":
+            # use this for cooperative infrastructure+vehicle perception
+            temp_name = os.path.basename(example["registered_lidar_path"])
         temp_name = temp_name.split("_")
         pcd_timestamp = temp_name[0] + "_" + temp_name[1]
 
